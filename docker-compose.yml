@@ -4,6 +4,8 @@ services:
   db:
     image: postgres
     restart: always
+    # volumes:
+    #  - ./init.sql:/docker-entrypoint-initdb.d/initdb.sql
     environment:
       - POSTGRES_DB=todol
       - POSTGRES_USER=todol_db_user
