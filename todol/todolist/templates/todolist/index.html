@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'todolist/main.css' %}">
+    <title>TODO List</title>
+</head>
+
+<body>
+	<div>
+		<h1>TODO List</h1>
+		{% if todolist %}
+			<ul>
+			{% for item in todolist %}
+				<li>{{ item.item_name|upper }} - {{item.item_status}}</li>
+			{% endfor %}
+			</ul>
+		{% else %}
+			<p>You are all set.</p>
+		{% endif %}
+	</div>
+</body>
+
+</html>
