@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'todol.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'todol',
-        'USER': 'todol_db_user',
+        'NAME': 'postgres',
+        'USER': 'postgres',
 	'PASSWORD': 'passw0rd@',
         'HOST': 'db',
         'PORT': 5432,
