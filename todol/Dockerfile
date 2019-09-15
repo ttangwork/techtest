@@ -1,3 +1,6 @@
+FROM postgres
+ADD init.sql /docker-entrypoint-initdb.d/
+
 FROM python:3
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /todol
