@@ -1,0 +1,3 @@
+### Django files to be ignored ###
+*.pyc
+__pycache__/
