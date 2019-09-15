@@ -1,8 +1,13 @@
-version: '3'
+version: '3.7'
 
 services:
   db:
     image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=todol
+      - POSTGRES_USER=todol_db_user
+      - POSTGRES_PASSWORD=passw0rd@
   web:
     build: .
     command: bash -c "sleep 5 && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
