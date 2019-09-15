@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'todol',
         'USER': 'todol_db_user',
 	'PASSWORD': 'passw0rd@',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': 5432,
     }
 }
