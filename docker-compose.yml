@@ -5,14 +5,16 @@ services:
     image: postgres
     restart: always
     # volumes:
-    #  - ./init.sql:/docker-entrypoint-initdb.d/initdb.sql
     environment:
       - POSTGRES_DB=todol
       - POSTGRES_USER=todol_db_user
       - POSTGRES_PASSWORD=passw0rd@
   web:
     build: .
-    command: bash -c "sleep 5 && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    # web service needs to wait for 15 seconds until db service is completely up
+    # migration and data dump through manage.py to see the database
+    # runserver to boot up web tier
+    command: bash -c "sleep 15 && python manage.py makemigrations && python manage.py migrate && python manage.py loaddata datadump.json && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/todol
     ports:
