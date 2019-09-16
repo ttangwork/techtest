@@ -11,6 +11,7 @@ techtest/
 ├── docker-compose.yml
 ├── Dockerfile
 ├── manage.py
+├── README.md
 ├── requirements.txt
 ├── todol
 │   ├── __init__.py
@@ -18,7 +19,6 @@ techtest/
 │   ├── urls.py
 │   └── wsgi.py
 ├── todolist
-│   ├── admin.py
 │   ├── apps.py
 │   ├── __init__.py
 │   ├── migrations
@@ -31,7 +31,6 @@ techtest/
 │   ├── templates
 │   │   └── todolist
 │   │       └── index.html
-│   ├── tests.py
 │   ├── urls.py
 │   └── views.py
 └── web.env
