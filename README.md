@@ -14,16 +14,13 @@ techtest/
 ├── README.md
 ├── requirements.txt
 ├── todol
-│   ├── __init__.py
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
 ├── todolist
 │   ├── apps.py
-│   ├── __init__.py
 │   ├── migrations
-│   │   ├── 0001_initial.py
-│   │   └── __init__.py
+│   │   └── 0001_initial.py
 │   ├── models.py
 │   ├── static
 │   │   └── todolist
@@ -34,6 +31,7 @@ techtest/
 │   ├── urls.py
 │   └── views.py
 └── web.env
+
 ```
 
 ## Installation
