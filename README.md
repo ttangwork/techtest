@@ -1,7 +1,8 @@
 ## Prerequisites
 The project was built on:
-- Ubuntu 18.04
-- Docker CE 19.03.2
+- ubuntu 18.04
+- docker CE 19.03.2
+- docker-compose 1.24.1
 
 ## Files
 ```
