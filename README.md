@@ -1,4 +1,4 @@
-## Pre-requisites
+## Prerequisites
 The project was built on:
 - Ubuntu 18.04
 - Docker CE 19.03.2
