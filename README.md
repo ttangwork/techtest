@@ -7,12 +7,11 @@ The project was built on:
 ## Files
 ```
 techtest/
-├── datadump.json
+├── db
+│   └── Dockerfile-db
 ├── docker-compose.yml
-├── Dockerfile
 ├── manage.py
 ├── README.md
-├── requirements.txt
 ├── todol
 │   ├── settings.py
 │   ├── urls.py
@@ -20,7 +19,7 @@ techtest/
 ├── todolist
 │   ├── apps.py
 │   ├── migrations
-│   │   └── 0001_initial.py
+│   │   ├── 0001_initial.py
 │   ├── models.py
 │   ├── static
 │   │   └── todolist
@@ -30,8 +29,11 @@ techtest/
 │   │       └── index.html
 │   ├── urls.py
 │   └── views.py
-└── web.env
-
+└── web
+    ├── datadump.json
+    ├── Dockerfile-web
+    ├── requirements.txt
+    └── web.env
 ```
 
 ## Installation
