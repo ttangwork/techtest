@@ -2,19 +2,24 @@ version: '3.7'
 
 services:
   db:
-    image: postgres
-    restart: always
+    # image: postgres
+    # restart: always
+    build:
+      context: ./db
+      dockerfile: Dockerfile-db
     # known issue: the db password below is visible
     environment:
       - POSTGRES_DB=todol
       - POSTGRES_USER=todol_db_user
       - POSTGRES_PASSWORD=passw0rd@
   web:
-    build: .
+    build:
+      context: ./web
+      dockerfile: Dockerfile-web
     # web service needs to wait for 15 seconds until db service is completely up
     # migration and data dump through manage.py to seed the database
     # runserver to boot up web tier
-    command: bash -c "sleep 15 && python manage.py makemigrations && python manage.py migrate && python manage.py loaddata datadump.json && python manage.py runserver 0.0.0.0:8000"
+    command: bash -c "sleep 15 && python manage.py makemigrations && python manage.py migrate && python manage.py loaddata ./web/datadump.json && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/todol
     ports:
@@ -23,6 +28,4 @@ services:
       - db
     # the env file below contains db passowrd and django secret key
     env_file:
-      - web.env
-
-
+      - ./web/web.env
